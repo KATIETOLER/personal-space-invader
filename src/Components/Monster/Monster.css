@@ -1,0 +1,18 @@
+.monster-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+}
+
+.food-container {
+	height: 10em;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+}
+
+svg {
+	height: 40vw;
+}

@@ -1,0 +1,53 @@
+.App {
+	text-align: center;
+	display: flex;
+	width: 100vw;
+}
+h1 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 4em;
+	color: #fd151b;
+}
+
+h4,
+#space {
+	color: whitesmoke;
+	font-size: 1.5em;
+	font-weight: 400;
+}
+
+header {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	padding-top: 10em;
+	padding-bottom: 2em;
+	padding-left: 5em;
+}
+
+button {
+	color: whitesmoke;
+	background-color: #1e1e24;
+	border: solid 0.09em rgb(212, 242, 211);
+	padding: 0.7em;
+	width: 15em;
+	border-radius: 3em;
+	cursor: pointer;
+}
+
+button:hover {
+	color: #ffb30f;
+}
+
+.friend-select {
+	margin-left: 6vw;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+}
+
+#arrow {
+	height: 2em;
+	filter: invert(100%);
+}
