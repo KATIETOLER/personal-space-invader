@@ -78,7 +78,9 @@ class Monster extends Component {
 				</div>
 				<div className='monster-chooser-container'>
 					{!this.state.isDead && (
-						<button onClick={() => this.addMonster(this.state.currentMonster)}>
+						<button
+							id='monsterBtn'
+							onClick={() => this.addMonster(this.state.currentMonster)}>
 							Choose This Monster
 						</button>
 					)}
