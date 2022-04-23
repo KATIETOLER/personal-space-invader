@@ -3,8 +3,9 @@ import './App.css'
 import Monster from '../Monster/Monster'
 import { Route, NavLink, Switch } from 'react-router-dom'
 import Nav from '../Nav/Nav'
-import colorRocket from '../../images/rocket-color.png'
 import arrow from '../../images/right-arrow.png'
+import FavMonster from '../FavMonster/FavMonster'
+import Care from '../Care/Care'
 
 class App extends Component {
 	constructor() {
@@ -33,7 +34,13 @@ class App extends Component {
 							</button>
 						</NavLink>
 					</Route>
-					<Route exact path='/home' render={() => <Monster />} />
+					<Route
+						exact
+						path='/home'
+						render={() => <Monster addMonster={this.addMonster} />}
+					/>
+					<Route exact path='/care' render={() => <Care />} />
+					<Route exact path='/my-monster' render={() => <FavMonster />} />
 				</Switch>
 			</main>
 		)
