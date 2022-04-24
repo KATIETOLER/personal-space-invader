@@ -8,8 +8,7 @@ form {
 
 .favMonster-container {
 	display: flex;
-	flex-direction: row;
-	padding: 3em;
+	justify-content: center;
 }
 
 form {
