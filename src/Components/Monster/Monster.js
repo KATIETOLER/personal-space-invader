@@ -32,7 +32,7 @@ class Monster extends Component {
 						</button>
 					)}
 					{this.state.food >= 10 && (
-						<div id='overfeed' className='overfeed'>
+						<div id='dead' className='overfeed'>
 							your monster
 							<br></br>
 							<p>has died...</p>{' '}
@@ -62,7 +62,7 @@ class Monster extends Component {
 				<div className='monster-chooser-container'>
 					{!this.state.isDead && (
 						<button
-							id='monsterBtn'
+							id='monsterChooserBtn'
 							onClick={() => this.props.addMonster(this.props.currentMonster)}>
 							Choose This Monster
 						</button>
@@ -79,7 +79,7 @@ class Monster extends Component {
 						)}
 						{this.props.favMonster && !this.state.isDead && (
 							<div className='con'>
-								<p>congratuations!</p>
+								<p>congratulations!</p>
 								<p>you have a new friend.</p>{' '}
 							</div>
 						)}
