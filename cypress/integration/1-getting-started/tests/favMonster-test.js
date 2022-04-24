@@ -1,54 +1,72 @@
-describe('Monster Home Page', () => {
+describe('Favorite Monster Page', () => {
 	beforeEach(() => {
-		cy.intercept('GET', 'https://app.pixelencounter.com/api/basic/monsters', {
-			statusCode: 200,
-			body: {
-				'results': [
-					{
-						'id': 1,
-						'svgContent': `${data}`,
-					},
-				],
-			},
-		})
+		cy.intercept(
+			'GET',
+			'https://bf07a96b-9a4f-4123-ac71-22d6f6d2a09c.mock.pstmn.io/api/basic/monsters',
+			{
+				statusCode: 200,
+				body: {
+					'results': [
+						{
+							'id': 1,
+							'svgContent': `${data}`,
+						},
+					],
+				},
+			}
+		)
 		cy.visit('localhost:3000/home')
 	})
 
-	it('displays random monster on load', () => {
-		cy.get('.monster-container')
-			.get('.monster-img-container')
-			.get('.mon')
-			.should('exist')
+	it('should be able to choose a favorite monster', () => {
+		cy.get('.monster-chooser-container')
+			.get('#monsterChooserBtn')
+			.click()
+			.get('.congrats')
+			.get('.con')
+			.contains('congratulations!')
 	})
-	it('should be able to feed the monster', () => {
-		cy.get('.monster-container').get('.food-container').get('#feedBtn').click()
+	it('should be able to navigate to the My Monster page and see the monster chosen', () => {
+		cy.get('.monster-chooser-container').get('#monsterChooserBtn').click()
+		cy.get('#myMonster').click()
+		cy.get('.favMonster-container').get('.mon').should('be.visible')
 	})
-	it('should tell the user if they are about to overfeed their monster', () => {
-		for (let i = 0; i < 8; i++) {
-			cy.get('.monster-container')
-				.get('.food-container')
-				.get('#feedBtn')
-				.click()
-		}
-		cy.get('#dontOverfeed').contains("Don't overfeed")
+	it('should display a message if no favorite monster has been chosen', () => {
+		cy.get('#myMonster').click()
+		cy.get('.favMonster-container')
+			.get('.sorry-message')
+			.should('be.visible')
+			.contains(
+				'sorry no monster yet! click the rocketship to go home and choose one!'
+			)
 	})
-	it('should tell the user the monster has died after 10 feedings', () => {
-		for (let i = 0; i < 10; i++) {
-			cy.get('.monster-container')
-				.get('.food-container')
-				.get('#feedBtn')
-				.click()
-		}
-		cy.get('#dead').contains('has died...')
+	it('should show a form to name a monster if a favorite monster has been selected', () => {
+		cy.get('.monster-chooser-container').get('#monsterChooserBtn').click()
+		cy.get('#myMonster').click()
+		cy.get('.favMonster-container').get('.name-form').should('be.visible')
 	})
-	it('should prompt the user to try again only after the monster has died', () => {
-		for (let i = 0; i < 10; i++) {
-			cy.get('.monster-container')
-				.get('.food-container')
-				.get('#feedBtn')
-				.click()
-		}
-		cy.get('.congrats').get('.try-again').should('be.visible')
+	it('should show the monsters name after the name has been chosen', () => {
+		cy.get('.monster-chooser-container').get('#monsterChooserBtn').click()
+		cy.get('#myMonster').click()
+		cy.get('.favMonster-container')
+			.get('.name-form')
+			.get('#name')
+			.type('Walter')
+			.get('.name-form')
+			.get('#submit')
+			.click()
+		cy.get('.greeting').contains('Hello, Walter')
+	})
+	it('should not show a form if a name has already been selected', () => {
+		cy.get('.monster-chooser-container').get('#monsterChooserBtn').click()
+		cy.get('#myMonster').click()
+		cy.get('.favMonster-container')
+			.get('.name-form')
+			.get('#name')
+			.type('Walter')
+			.get('.name-form')
+			.get('#submit')
+			.click()
 	})
 })
 
