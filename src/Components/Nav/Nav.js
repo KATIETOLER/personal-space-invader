@@ -5,7 +5,7 @@ import { Route, NavLink, Switch } from 'react-router-dom'
 
 const Nav = () => {
 	return (
-		<nav>
+		<nav id='nav'>
 			<NavLink to='/'>
 				<div className='imgs'>
 					<img src={rocket} alt='rocket' id='rocket' />
@@ -13,13 +13,19 @@ const Nav = () => {
 				</div>
 			</NavLink>
 			<NavLink to='/my-monster'>
-				<button className='nav-btn'>My Monster</button>
+				<button className='nav-btn' id='myMonster'>
+					My Monster
+				</button>
 			</NavLink>
 			<NavLink to='/home'>
-				<button className='nav-btn'>Choose</button>
+				<button id='choose' className='nav-btn'>
+					Choose
+				</button>
 			</NavLink>
 			<NavLink to='/care'>
-				<button className='nav-btn'>Feed & Care</button>
+				<button id='care' className='nav-btn'>
+					Feed & Care
+				</button>
 			</NavLink>
 		</nav>
 	)
