@@ -14,6 +14,12 @@
 	padding-left: 10em;
 }
 
+.try-again {
+	border: none;
+	font-size: 2em;
+	color: #2ab10b;
+}
+
 .food-container,
 .monster-chooser-container {
 	height: 30em;

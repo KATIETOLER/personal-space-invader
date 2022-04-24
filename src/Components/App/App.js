@@ -6,14 +6,30 @@ import Nav from '../Nav/Nav'
 import arrow from '../../images/right-arrow.png'
 import FavMonster from '../FavMonster/FavMonster'
 import Care from '../Care/Care'
+import fetchData from '../../api-calls'
 
 class App extends Component {
 	constructor() {
 		super()
 		this.state = {
-			monster: '',
+			allMonsters: [],
 			favMonster: '',
+			currentMonster: '',
 		}
+	}
+	componentDidMount() {
+		fetchData
+			.fetchMonsters()
+			.then((data) => this.setState({ allMonsters: data.results }))
+			.then(() => this.showRandomMonster(this.state.allMonsters))
+			.catch((error) => this.setState({ error: error }))
+	}
+	showRandomMonster = (array) => {
+		let i = Math.floor(Math.random() * array.length)
+		this.setState({ currentMonster: array[i] })
+	}
+	addMonster = (monster) => {
+		this.setState({ favMonster: monster })
 	}
 	render() {
 		return (
@@ -37,10 +53,17 @@ class App extends Component {
 					<Route
 						exact
 						path='/home'
-						render={() => <Monster addMonster={this.addMonster} />}
+						render={() => (
+							<Monster
+								addMonster={this.addMonster}
+								currentMonster={this.state.currentMonster}
+								favMonster={this.state.favMonster}
+							/>
+						)}
 					/>
 					<Route exact path='/care' render={() => <Care />} />
-					<Route exact path='/my-monster' render={() => <FavMonster />} />
+
+					<FavMonster favMonster={this.state.favMonster} />
 				</Switch>
 			</main>
 		)
