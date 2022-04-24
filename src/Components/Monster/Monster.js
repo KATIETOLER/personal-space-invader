@@ -28,16 +28,6 @@ class Monster extends Component {
 		return (
 			<div className='monster-container'>
 				<div className='food-container'>
-					{this.state.food <= 9 && (
-						<button id='feedBtn' onClick={(event) => this.feedMonster(event)}>
-							feed
-						</button>
-					)}
-
-					{this.state.food <= 9 && (
-						<div className='food'>Food Counter: {this.state.food}</div>
-					)}
-
 					{this.state.food >= 10 && (
 						<div id='dead' className='overfeed'>
 							your monster
@@ -51,6 +41,15 @@ class Monster extends Component {
 							Don't overfeed <p>your monster,</p>
 							<p>please!</p>
 						</div>
+					)}
+					{this.state.food <= 9 && (
+						<button id='feedBtn' onClick={(event) => this.feedMonster(event)}>
+							feed
+						</button>
+					)}
+
+					{this.state.food <= 9 && (
+						<div className='food'>Food Counter: {this.state.food}</div>
 					)}
 				</div>
 				<div className='monster-img-container'>
