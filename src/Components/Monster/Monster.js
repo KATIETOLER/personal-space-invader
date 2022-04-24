@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Monster.css'
 import fetchData from '../../api-calls'
 import FavMonster from '../FavMonster/FavMonster'
+import dead from '../../images/shakespeare.png'
 import { Route, NavLink, Switch } from 'react-router-dom'
 
 class Monster extends Component {
@@ -20,6 +21,7 @@ class Monster extends Component {
 		}
 		if (this.state.food >= 9) {
 			this.setState({ isDead: true })
+			this.setState({ favMonster: '' })
 		}
 	}
 	render() {
@@ -31,16 +33,17 @@ class Monster extends Component {
 							feed
 						</button>
 					)}
+
+					{this.state.food <= 9 && (
+						<div className='food'>Food Counter: {this.state.food}</div>
+					)}
+
 					{this.state.food >= 10 && (
 						<div id='dead' className='overfeed'>
 							your monster
 							<br></br>
 							<p>has died...</p>{' '}
 						</div>
-					)}
-
-					{this.state.food <= 9 && (
-						<div className='food'>Food Counter: {this.state.food}</div>
 					)}
 
 					{this.state.food > 6 && !this.state.isDead && (
@@ -51,12 +54,17 @@ class Monster extends Component {
 					)}
 				</div>
 				<div className='monster-img-container'>
-					{this.props.currentMonster && (
+					{this.props.currentMonster && !this.state.isDead && (
 						<div
 							className='mon'
 							dangerouslySetInnerHTML={{
 								__html: this.props.currentMonster.svgContent,
 							}}></div>
+					)}
+					{this.state.isDead && (
+						<div className='dead-img'>
+							<img src={dead} alt='yorick skull' id='dead' />
+						</div>
 					)}
 				</div>
 				<div className='monster-chooser-container'>
@@ -80,7 +88,7 @@ class Monster extends Component {
 						{this.props.favMonster && !this.state.isDead && (
 							<div className='con'>
 								<p>congratulations!</p>
-								<p>you have a new friend.</p>{' '}
+								<p>you have a new friend.</p>
 							</div>
 						)}
 					</div>

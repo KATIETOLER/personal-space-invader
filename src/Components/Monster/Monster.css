@@ -1,6 +1,6 @@
 .monster-container {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
 	flex-direction: row;
 }
@@ -32,8 +32,12 @@
 .con {
 	margin-top: 2em;
 }
+
 .overfeed {
 	color: #fd151b;
+}
+.sorry-message {
+	padding: 16vw;
 }
 
 svg {
@@ -44,6 +48,12 @@ svg {
 
 .yourMonster {
 	padding: 2em;
+}
+
+#dead {
+	height: 10vw;
+	-webkit-animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+	animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 /* ----- Animations ------ */
@@ -114,5 +124,22 @@ svg {
 		transform: scale(1);
 		-webkit-animation-timing-function: ease-out;
 		animation-timing-function: ease-out;
+	}
+}
+
+@-webkit-keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
