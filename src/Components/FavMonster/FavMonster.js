@@ -24,7 +24,7 @@ class FavMonster extends Component {
 		return (
 			<div className='favMonster-container'>
 				{!this.props.favMonster && (
-					<div>
+					<div className='sorry-message'>
 						{' '}
 						sorry no monster yet! click the rocketship to go home and choose
 						one!
@@ -35,15 +35,18 @@ class FavMonster extends Component {
 						<p className='greeting'>Hello, {this.state.name}</p>
 					)}
 					{this.state.form && this.props.favMonster && (
-						<form>
+						<form className='name-form'>
 							<label name='name'>Name your monster--</label>
 							<input
 								name='name'
 								type='text'
+								id='name'
 								placeholder='Name'
 								value={this.state.name}
 								onChange={(event) => this.handleChange(event)}></input>
-							<button onClick={(event) => this.submit(event)}>submit</button>
+							<button id='submit' onClick={(event) => this.submit(event)}>
+								submit
+							</button>
 						</form>
 					)}
 				</div>
