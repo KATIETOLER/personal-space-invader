@@ -1,8 +1,6 @@
 describe('Home Page', () => {
 	beforeEach(() => {
-		cy.visit('localhost:3000/home')
-
-		cy.intercept('https://app.pixelencounter.com/api/basic/monsters', {
+		cy.intercept('GET', 'https://app.pixelencounter.com/api/basic/monsters', {
 			statusCode: 200,
 			body: {
 				'results': [
@@ -13,6 +11,7 @@ describe('Home Page', () => {
 				],
 			},
 		})
+		cy.visit('localhost:3000/home')
 	})
 
 	it('displays random monster on load', () => {
@@ -22,10 +21,34 @@ describe('Home Page', () => {
 			.should('exist')
 	})
 	it('should be able to feed the monster', () => {
-		cy.get('.monster-container')
-			.get('.monster-chooser-container')
-			.get('#monsterBtn')
-			.should('exist')
+		cy.get('.monster-container').get('.food-container').get('#feedBtn').click()
+	})
+	it('should tell the user if they are about to overfeed their monster', () => {
+		for (let i = 0; i < 8; i++) {
+			cy.get('.monster-container')
+				.get('.food-container')
+				.get('#feedBtn')
+				.click()
+		}
+		cy.get('#dontOverfeed').contains("Don't overfeed")
+	})
+	it('should tell the user the monster has died after 10 feedings', () => {
+		for (let i = 0; i < 10; i++) {
+			cy.get('.monster-container')
+				.get('.food-container')
+				.get('#feedBtn')
+				.click()
+		}
+		cy.get('#dontOverfeed').contains("Don't overfeed")
+	})
+	it('should prompt the user to try again only after the monster has died', () => {
+		for (let i = 0; i < 10; i++) {
+			cy.get('.monster-container')
+				.get('.food-container')
+				.get('#feedBtn')
+				.click()
+		}
+		cy.get('.congrats').get('.try-again').should('be.visible')
 	})
 })
 

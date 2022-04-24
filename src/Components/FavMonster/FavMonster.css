@@ -1,7 +1,22 @@
-.favMonster-container {
+.name-container,
+form {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 	flex-direction: column;
-	padding: 2em;
+}
+
+.favMonster-container {
+	display: flex;
+	flex-direction: row;
+	padding: 3em;
+}
+
+form {
+	height: 30vw;
+	padding: 3em;
+}
+
+.greeting {
+	margin-bottom: 3em;
 }
