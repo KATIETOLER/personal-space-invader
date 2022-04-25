@@ -16,10 +16,11 @@ This is a showcase project for Turing School of Software & Design. It was create
 - HTML
 - React & Router
 - Cypress
+- PropTypes
 
 ## Links
 
-- [Deploy](https://personal-space-invader-time.surge.sh/)
+- [Deploy](https://personal-space-invader27.surge.sh/)
 - [Repository](https://github.com/KATIETOLER/personal-space-invader)
 
 ## Sample Views

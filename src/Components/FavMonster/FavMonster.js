@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './FavMonster.css'
+import PropTypes from 'prop-types'
 
 class FavMonster extends Component {
 	constructor({ favMonster, deleteMonster }) {
@@ -23,6 +24,7 @@ class FavMonster extends Component {
 	render() {
 		return (
 			<div className='favMonster-container'>
+				{console.log(typeof this.state.favMonster)}
 				{!this.props.favMonster && (
 					<div className='sorry-message'>
 						{' '}
@@ -69,3 +71,8 @@ class FavMonster extends Component {
 }
 
 export default FavMonster
+
+FavMonster.propTypes = {
+	deleteMonster: PropTypes.func,
+	favMonster: PropTypes.any.isRequired,
+}
