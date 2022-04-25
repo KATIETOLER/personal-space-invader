@@ -1,6 +1,6 @@
 # Personal Space Invader
 
-- Katie Toler | [My Github](https://github.com/KATIETOLER) | [My LinkedIn](https://www.linkedin.com/in/katie-toler-467560158/)
+Katie Toler | [My Github](https://github.com/KATIETOLER) | [My LinkedIn](https://www.linkedin.com/in/katie-toler-467560158/)
 
 ## Overview
 
@@ -55,3 +55,5 @@ Monster page view:
 - PM [Robbie Jaeger](https://github.com/robbiejaeger)
 
 - PR by [Emili K](https://github.com/Ekaiman)
+
+- API [Pixel Encounter](https://pixelencounter.com/Api)
