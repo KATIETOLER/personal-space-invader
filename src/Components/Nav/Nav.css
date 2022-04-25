@@ -10,7 +10,8 @@ nav {
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	padding: 2em;
+	align-items: center;
+	padding: 1em;
 	width: 100vw;
 }
 
@@ -22,7 +23,7 @@ nav {
 #rocket {
 	height: 5em;
 	filter: invert(100%);
-	padding-right: 30em;
+	padding-right: 10em;
 }
 
 #rocket2 {

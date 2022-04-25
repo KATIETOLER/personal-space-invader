@@ -60,14 +60,14 @@ class Monster extends Component {
 								__html: this.props.currentMonster.svgContent,
 							}}></div>
 					)}
-					{this.state.isDead && (
+					{this.state.isDead && this.state.food >= 10 && (
 						<div className='dead-img'>
 							<img src={dead} alt='yorick skull' id='dead' />
 						</div>
 					)}
 				</div>
 				<div className='monster-chooser-container'>
-					{!this.state.isDead && (
+					{!this.state.isDead && this.state.food < 10 && (
 						<button
 							id='monsterChooserBtn'
 							onClick={() => this.props.addMonster(this.props.currentMonster)}>
