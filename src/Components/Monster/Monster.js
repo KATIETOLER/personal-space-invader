@@ -99,8 +99,8 @@ class Monster extends Component {
 Monster.propTypes = {
 	deleteMonster: PropTypes.func,
 	addMonster: PropTypes.func,
-	currentMonster: PropTypes.string,
-	favMonster: PropTypes.string,
+	favMonster: PropTypes.any.isRequired,
+	currentMonster: PropTypes.any.isRequired,
 }
 
 export default Monster

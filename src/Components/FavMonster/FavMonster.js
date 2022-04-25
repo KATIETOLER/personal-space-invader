@@ -24,6 +24,7 @@ class FavMonster extends Component {
 	render() {
 		return (
 			<div className='favMonster-container'>
+				{console.log(typeof this.state.favMonster)}
 				{!this.props.favMonster && (
 					<div className='sorry-message'>
 						{' '}
@@ -73,5 +74,5 @@ export default FavMonster
 
 FavMonster.propTypes = {
 	deleteMonster: PropTypes.func,
-	favMonster: PropTypes.string,
+	favMonster: PropTypes.any.isRequired,
 }

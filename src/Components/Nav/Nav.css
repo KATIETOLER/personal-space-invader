@@ -12,7 +12,29 @@ nav {
 	align-content: center;
 	align-items: center;
 	padding: 1em;
-	width: 100vw;
+}
+
+@media screen and (max-width: 500px) {
+	nav {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 600px) {
+	.App {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 500px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 #rocket2 {

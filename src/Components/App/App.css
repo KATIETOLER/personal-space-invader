@@ -50,3 +50,26 @@ button:hover {
 	height: 2em;
 	filter: invert(100%);
 }
+
+@media screen and (max-width: 500px) {
+	main {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 600px) {
+	.App {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 500px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+	}
+}

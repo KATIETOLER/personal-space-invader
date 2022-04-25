@@ -16,6 +16,7 @@ This is a showcase project for Turing School of Software & Design. It was create
 - HTML
 - React & Router
 - Cypress
+- PropTypes
 
 ## Links
 
