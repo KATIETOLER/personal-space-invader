@@ -23,6 +23,9 @@ This is a showcase project for Turing School of Software & Design. It was create
 - [Deploy](https://personal-space-invader27.surge.sh/)
 - [Repository](https://github.com/KATIETOLER/personal-space-invader)
 
+## How to View
+The API for this project does not allow CORs so the best way to view this project locally is through creating a temporary mock server. Once you have created the mock server from the [Pixel Encounter API](https://pixelencounter.com/Api) you can `clone` this repository and run `npm start`. Otherwise, see the deploy link above.
+
 ## Sample Views
 
 Welcome page view:
