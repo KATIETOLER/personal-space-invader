@@ -36,6 +36,7 @@ class App extends Component {
 	}
 	deleteMonster = () => {
 		this.setState({ favMonster: null })
+		window.location.reload()
 	}
 	render() {
 		return (
