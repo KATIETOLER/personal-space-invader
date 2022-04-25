@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.c33d0b88.css",
-    "main.js": "/static/js/main.08328f73.js",
+    "main.css": "/static/css/main.73cb7e34.css",
+    "main.js": "/static/js/main.6ed5fe92.js",
     "static/js/787.f0c5339b.chunk.js": "/static/js/787.f0c5339b.chunk.js",
     "static/media/shakespeare.png": "/static/media/shakespeare.8fda6a6b851b23513905.png",
     "static/media/startup.png": "/static/media/startup.a65c054f79c0896458b4.png",
     "index.html": "/index.html",
-    "main.c33d0b88.css.map": "/static/css/main.c33d0b88.css.map",
-    "main.08328f73.js.map": "/static/js/main.08328f73.js.map",
+    "main.73cb7e34.css.map": "/static/css/main.73cb7e34.css.map",
+    "main.6ed5fe92.js.map": "/static/js/main.6ed5fe92.js.map",
     "787.f0c5339b.chunk.js.map": "/static/js/787.f0c5339b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c33d0b88.css",
-    "static/js/main.08328f73.js"
+    "static/css/main.73cb7e34.css",
+    "static/js/main.6ed5fe92.js"
   ]
 }

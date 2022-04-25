@@ -21,6 +21,7 @@ class Monster extends Component {
 		if (this.state.food >= 9) {
 			this.setState({ isDead: true })
 			this.setState({ favMonster: '' })
+			this.setState({ currentMonster: '' })
 		}
 	}
 	render() {
@@ -75,12 +76,8 @@ class Monster extends Component {
 					)}
 					<div className='congrats'>
 						{this.state.isDead && (
-							<NavLink to='/home'>
-								<button
-									className='try-again'
-									onClick={() => window.location.reload()}>
-									Try Again?
-								</button>
+							<NavLink to='/'>
+								<button className='try-again'>Try Again?</button>
 							</NavLink>
 						)}
 						{this.props.favMonster && !this.state.isDead && (
