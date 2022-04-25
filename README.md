@@ -42,7 +42,7 @@ Don't overfeed a Monster:
 
 Killing a Monster:
 
-![Killing a Monster:](https://media2.giphy.com/media/pKP3PLmVb5YBwiSHI8/giphy.gif)
+![Killing a Monster:](https://media0.giphy.com/media/L8ACCmmJbhQHZU7ZW1/giphy.gif)
 
 Monster page view:
 
