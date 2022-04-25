@@ -10,6 +10,12 @@ form {
 	display: flex;
 	justify-content: center;
 }
+
+.noMon {
+	margin-top: 4em;
+	padding: none;
+}
+
 @media screen and (max-width: 500px) {
 	.favMonster-container {
 		display: flex;

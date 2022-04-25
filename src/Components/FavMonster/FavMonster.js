@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './FavMonster.css'
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom'
 
 class FavMonster extends Component {
 	constructor({ favMonster, deleteMonster }) {
@@ -30,6 +31,9 @@ class FavMonster extends Component {
 						{' '}
 						sorry no monster yet! click the rocketship to go home and choose
 						one!
+						<NavLink to='/'>
+							<button className='try-again noMon'>Try Again?</button>
+						</NavLink>
 					</div>
 				)}
 
