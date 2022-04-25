@@ -31,6 +31,9 @@ class App extends Component {
 	addMonster = (monster) => {
 		this.setState({ favMonster: monster })
 	}
+	deleteMonster = () => {
+		this.setState({ favMonster: null })
+	}
 	render() {
 		return (
 			<main>
@@ -56,14 +59,17 @@ class App extends Component {
 						render={() => (
 							<Monster
 								addMonster={this.addMonster}
+								deleteMonster={this.deleteMonster}
 								currentMonster={this.state.currentMonster}
 								favMonster={this.state.favMonster}
 							/>
 						)}
 					/>
 					<Route exact path='/care' render={() => <Care />} />
-
-					<FavMonster favMonster={this.state.favMonster} />
+					<FavMonster
+						favMonster={this.state.favMonster}
+						deleteMonster={this.deleteMonster}
+					/>
 				</Switch>
 			</main>
 		)
