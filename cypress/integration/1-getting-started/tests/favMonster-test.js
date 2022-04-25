@@ -1,20 +1,16 @@
 describe('Favorite Monster Page', () => {
 	beforeEach(() => {
-		cy.intercept(
-			'GET',
-			'https://app.pixelencounter.com/api/basic/monsters',
-			{
-				statusCode: 200,
-				body: {
-					'results': [
-						{
-							'id': 1,
-							'svgContent': `${data}`,
-						},
-					],
-				},
-			}
-		)
+		cy.intercept('GET', 'https://app.pixelencounter.com/api/basic/monsters', {
+			statusCode: 200,
+			body: {
+				'results': [
+					{
+						'id': 1,
+						'svgContent': `${data}`,
+					},
+				],
+			},
+		})
 		cy.visit('localhost:3000/home')
 	})
 
