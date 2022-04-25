@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './FavMonster.css'
 
 class FavMonster extends Component {
-	constructor({ favMonster }) {
+	constructor({ favMonster, deleteMonster }) {
 		super()
 		this.state = {
 			name: '',
@@ -30,6 +30,7 @@ class FavMonster extends Component {
 						one!
 					</div>
 				)}
+
 				<div className='name-container'>
 					{this.state.name && !this.state.form && (
 						<p className='greeting'>Hello, {this.state.name}</p>
@@ -50,11 +51,18 @@ class FavMonster extends Component {
 						</form>
 					)}
 				</div>
-				<div
-					className='mon'
-					dangerouslySetInnerHTML={{
-						__html: this.props.favMonster.svgContent,
-					}}></div>
+				{this.props.favMonster && (
+					<div
+						className='mon'
+						dangerouslySetInnerHTML={{
+							__html: this.props.favMonster.svgContent,
+						}}></div>
+				)}
+				{this.props.favMonster && (
+					<button id='delete' onClick={() => this.props.deleteMonster()}>
+						delete?
+					</button>
+				)}
 			</div>
 		)
 	}
