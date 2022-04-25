@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './FavMonster.css'
+import PropTypes from 'prop-types'
 
 class FavMonster extends Component {
 	constructor({ favMonster, deleteMonster }) {
@@ -69,3 +70,8 @@ class FavMonster extends Component {
 }
 
 export default FavMonster
+
+FavMonster.propTypes = {
+	deleteMonster: PropTypes.func,
+	favMonster: PropTypes.string,
+}

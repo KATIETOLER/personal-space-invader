@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './Monster.css'
 import dead from '../../images/shakespeare.png'
-import { Route, NavLink, Switch } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 class Monster extends Component {
 	constructor({ currentMonster, addMonster, deleteMonster, favMonster }) {
@@ -93,6 +94,13 @@ class Monster extends Component {
 			</div>
 		)
 	}
+}
+
+Monster.propTypes = {
+	deleteMonster: PropTypes.func,
+	addMonster: PropTypes.func,
+	currentMonster: PropTypes.string,
+	favMonster: PropTypes.string,
 }
 
 export default Monster

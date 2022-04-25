@@ -7,6 +7,8 @@ import arrow from '../../images/right-arrow.png'
 import FavMonster from '../FavMonster/FavMonster'
 import Care from '../Care/Care'
 import fetchData from '../../api-calls'
+import Error from '../Error/Error'
+import PropTypes from 'prop-types'
 
 class App extends Component {
 	constructor() {
@@ -15,6 +17,7 @@ class App extends Component {
 			allMonsters: [],
 			favMonster: '',
 			currentMonster: '',
+			error: '',
 		}
 	}
 	componentDidMount() {
@@ -37,6 +40,7 @@ class App extends Component {
 	render() {
 		return (
 			<main>
+				{this.state.error && <Error error={this.state.error} />}
 				<Nav />
 				<Switch>
 					<Route exact path='/'>
