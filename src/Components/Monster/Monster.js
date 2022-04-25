@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import './Monster.css'
-import fetchData from '../../api-calls'
-import FavMonster from '../FavMonster/FavMonster'
 import dead from '../../images/shakespeare.png'
 import { Route, NavLink, Switch } from 'react-router-dom'
 

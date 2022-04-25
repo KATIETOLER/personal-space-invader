@@ -26,7 +26,6 @@
 
 .food-container,
 .monster-chooser-container {
-	/* height: 30em; */
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
