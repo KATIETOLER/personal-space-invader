@@ -1,20 +1,16 @@
 describe('Care Page', () => {
 	beforeEach(() => {
-		cy.intercept(
-			'GET',
-			'https://bf07a96b-9a4f-4123-ac71-22d6f6d2a09c.mock.pstmn.io/api/basic/monsters',
-			{
-				statusCode: 200,
-				body: {
-					'results': [
-						{
-							'id': 1,
-							'svgContent': `${data}`,
-						},
-					],
-				},
-			}
-		)
+		cy.intercept('GET', 'https://app.pixelencounter.com/api/basic/monsters', {
+			statusCode: 200,
+			body: {
+				'results': [
+					{
+						'id': 1,
+						'svgContent': `${data}`,
+					},
+				],
+			},
+		})
 		cy.visit('localhost:3000/care')
 	})
 

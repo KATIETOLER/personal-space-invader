@@ -4,16 +4,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #1e1e24;
 	color: #2ab10b;
-	padding: 4em;
 	height: 100%;
 	width: 100%;
 }
 
 * {
 	margin: 0;
-}
-
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-		monospace;
 }

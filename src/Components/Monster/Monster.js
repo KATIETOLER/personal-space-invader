@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import './Monster.css'
 import fetchData from '../../api-calls'
 import FavMonster from '../FavMonster/FavMonster'
+import dead from '../../images/shakespeare.png'
 import { Route, NavLink, Switch } from 'react-router-dom'
 
 class Monster extends Component {
-	constructor({ currentMonster, addMonster, favMonster }) {
+	constructor({ currentMonster, addMonster, deleteMonster, favMonster }) {
 		super()
 		this.state = {
 			currentMonster: this.currentMonster,
@@ -20,17 +21,13 @@ class Monster extends Component {
 		}
 		if (this.state.food >= 9) {
 			this.setState({ isDead: true })
+			this.setState({ favMonster: '' })
 		}
 	}
 	render() {
 		return (
 			<div className='monster-container'>
 				<div className='food-container'>
-					{this.state.food <= 9 && (
-						<button id='feedBtn' onClick={(event) => this.feedMonster(event)}>
-							feed
-						</button>
-					)}
 					{this.state.food >= 10 && (
 						<div id='dead' className='overfeed'>
 							your monster
@@ -39,28 +36,38 @@ class Monster extends Component {
 						</div>
 					)}
 
-					{this.state.food <= 9 && (
-						<div className='food'>Food Counter: {this.state.food}</div>
-					)}
-
 					{this.state.food > 6 && !this.state.isDead && (
 						<div id='dontOverfeed' className='overfeed'>
 							Don't overfeed <p>your monster,</p>
 							<p>please!</p>
 						</div>
 					)}
+					{this.state.food <= 9 && (
+						<button id='feedBtn' onClick={(event) => this.feedMonster(event)}>
+							feed
+						</button>
+					)}
+
+					{this.state.food <= 9 && (
+						<div className='food'>Food Counter: {this.state.food}</div>
+					)}
 				</div>
 				<div className='monster-img-container'>
-					{this.props.currentMonster && (
+					{this.props.currentMonster && !this.state.isDead && (
 						<div
 							className='mon'
 							dangerouslySetInnerHTML={{
 								__html: this.props.currentMonster.svgContent,
 							}}></div>
 					)}
+					{this.state.isDead && this.state.food >= 10 && (
+						<div className='dead-img'>
+							<img src={dead} alt='yorick skull' id='dead' />
+						</div>
+					)}
 				</div>
 				<div className='monster-chooser-container'>
-					{!this.state.isDead && (
+					{!this.state.isDead && this.state.food < 10 && (
 						<button
 							id='monsterChooserBtn'
 							onClick={() => this.props.addMonster(this.props.currentMonster)}>
@@ -80,7 +87,7 @@ class Monster extends Component {
 						{this.props.favMonster && !this.state.isDead && (
 							<div className='con'>
 								<p>congratulations!</p>
-								<p>you have a new friend.</p>{' '}
+								<p>you have a new friend.</p>
 							</div>
 						)}
 					</div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Nav.css'
 import rocket from '../../images/startup.png'
-import { Route, NavLink, Switch } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Nav = () => {
 	return (

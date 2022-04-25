@@ -8,8 +8,7 @@ form {
 
 .favMonster-container {
 	display: flex;
-	flex-direction: row;
-	padding: 3em;
+	justify-content: center;
 }
 
 form {
@@ -19,4 +18,8 @@ form {
 
 .greeting {
 	margin-bottom: 3em;
+}
+
+#delete {
+	border: none;
 }
