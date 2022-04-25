@@ -240,5 +240,6 @@ svg:hover {
 	}
 	.monster-img-container {
 		padding: none;
+		margin-left: -100px;
 	}
 }
