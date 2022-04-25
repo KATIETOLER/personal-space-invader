@@ -6,7 +6,7 @@ import dead from '../../images/shakespeare.png'
 import { Route, NavLink, Switch } from 'react-router-dom'
 
 class Monster extends Component {
-	constructor({ currentMonster, addMonster, favMonster }) {
+	constructor({ currentMonster, addMonster, deleteMonster, favMonster }) {
 		super()
 		this.state = {
 			currentMonster: this.currentMonster,
